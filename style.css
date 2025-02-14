@@ -20,6 +20,40 @@ body {
   perspective: 1000px;
 }
 
+audio {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  opacity: 0;
+  background-color: #ff6fec;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  animation: pulse 2s infinite;
+  cursor: pointer;
+  animation: showAudio 1s forwards 15s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes showAudio {
+  to {
+    opacity: 1;
+  }
+}
+
 h3 {
   position: absolute;
   top: 5%;
@@ -29,6 +63,30 @@ h3 {
   text-shadow: 0 0 10px rgba(250, 10, 10, 0.705), 0 0 20px red, 0 0 30px rgb(185, 49, 167);
   font-size: 3rem;
   z-index: 1000;
+}
+
+h2 {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
+  z-index: 1000;
+  text-decoration: underline;
+  font-style: italic;
+  opacity: 0;
+  animation: showText 1s forwards 15s;
+}
+
+@keyframes showText {
+  to {
+    opacity: 1;
+  }
+}
+
+h3, h1 {
+  font-style: italic;
 }
 
 h1 {
